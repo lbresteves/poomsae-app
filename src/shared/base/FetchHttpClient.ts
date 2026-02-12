@@ -13,7 +13,7 @@ export class FetchHttpClient implements IHttpClient {
   }
 
   public static getInstance(
-    defaultConfig: IFetchHttpClientConfig = {}
+    defaultConfig: IFetchHttpClientConfig = {},
   ): FetchHttpClient {
     if (!FetchHttpClient.instance) {
       FetchHttpClient.instance = new FetchHttpClient(defaultConfig);
@@ -29,7 +29,7 @@ export class FetchHttpClient implements IHttpClient {
   private mergeOptions(
     options: RequestInit,
     method: string,
-    body?: unknown
+    body?: unknown,
   ): RequestInit {
     const headers = {
       ...this.defaultConfig.headers,
@@ -62,7 +62,7 @@ export class FetchHttpClient implements IHttpClient {
   async post<T>(
     url: string,
     body: unknown,
-    options: RequestInit = {}
+    options: RequestInit = {},
   ): Promise<T> {
     const fullUrl = this.buildURL(url);
     const res = await fetch(fullUrl, this.mergeOptions(options, "POST", body));
@@ -73,7 +73,7 @@ export class FetchHttpClient implements IHttpClient {
   async put<T>(
     url: string,
     body: unknown,
-    options: RequestInit = {}
+    options: RequestInit = {},
   ): Promise<T> {
     const fullUrl = this.buildURL(url);
     const res = await fetch(fullUrl, this.mergeOptions(options, "PUT", body));

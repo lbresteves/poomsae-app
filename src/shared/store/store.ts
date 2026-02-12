@@ -30,5 +30,5 @@ export const useStore = create(
     ...productsSliceStore.slice(set as SetCallback<IProductsInitialState>),
     // add other slices here.
     // ...homeSliceStore.slice(set as SetCallback<IHomeInitialState>),
-  }))
+  })),
 );

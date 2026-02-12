@@ -18,7 +18,7 @@ export const Card = styled(View)(
     borderWidth: 1,
     borderColor: theme?.colors.border,
     width: full ? "100%" : 260,
-  })
+  }),
 );
 
 export const CardImageWrapper = styled.View({
