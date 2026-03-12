@@ -9,7 +9,7 @@ type IconMapping = Record<
   SymbolViewProps["name"],
   ComponentProps<typeof MaterialIcons>["name"]
 >;
-type IconSymbolName = keyof typeof MAPPING;
+export type IconSymbolName = keyof typeof MAPPING;
 
 /**
  * Add your SF Symbols to Material Icons mappings here.
@@ -24,6 +24,8 @@ const MAPPING = {
   "heart.fill": "favorite",
   heart: "favorite-border",
   "star.fill": "star",
+  "arrow.right": "arrow-right",
+  "repeat": "replay"
 } as IconMapping;
 
 /**
