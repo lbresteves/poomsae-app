@@ -1,4 +1,4 @@
-import { IPoomsae } from "../types/IPoomsae";
+import { IPoomsae } from "../../features/Home/types/IPoomsae";
 
 export const POOMSAE_LIST: IPoomsae[] = [
     { id: 1, name: "Taegeuk Il Jang", weight: 1 },

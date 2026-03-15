@@ -1,4 +1,4 @@
-import { POOMSAE_LIST } from "../data/PoomsaeList";
+import { POOMSAE_LIST } from "../../../shared/constants/PoomsaeList";
 import { IPoomsae } from "../types/IPoomsae";
 import { IPoomsaeCategory, PoomsaeName } from "../types/IPoomsaeCategory";
 import { POOMSAE_CATEGORY_LIST } from "./constants";

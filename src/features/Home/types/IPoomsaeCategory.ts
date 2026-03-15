@@ -1,4 +1,4 @@
-import { POOMSAE_LIST } from "../data/PoomsaeList";
+import { POOMSAE_LIST } from "../../../shared/constants/PoomsaeList";
 
 export type PoomsaeName = typeof POOMSAE_LIST[number]["name"]
 
