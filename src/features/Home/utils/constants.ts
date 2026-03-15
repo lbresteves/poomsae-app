@@ -1,6 +1,6 @@
-import { IPoomsaeCategoryDTO } from "../types/IPoomsaeCategoryDTO";
+import { IPoomsaeCategory } from "../types/IPoomsaeCategory";
 
-export const POOMSAE_CATEGORY_LIST: IPoomsaeCategoryDTO[] = [
+export const POOMSAE_CATEGORY_LIST: IPoomsaeCategory[] = [
     {
     category: "Cadet",
     poomsaeList: [

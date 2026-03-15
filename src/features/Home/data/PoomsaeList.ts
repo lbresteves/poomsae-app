@@ -1,6 +1,6 @@
-import { IPoomsaeDTO } from "../types/IPoomsaeDTO";
+import { IPoomsae } from "../types/IPoomsae";
 
-export const POOMSAE_LIST: IPoomsaeDTO[] = [
+export const POOMSAE_LIST: IPoomsae[] = [
     { id: 1, name: "Taegeuk Il Jang", weight: 1 },
     { id: 2, name: "Taegeuk Yi Jang", weight: 1 },
     { id: 3, name: "Taegeuk Sam Jang", weight: 1 },

@@ -1,6 +1,6 @@
 import { LabeledIcon, TextBox, ThemedText, ThemedView } from "@/src/shared/components";
 import { useEffect, useState } from "react";
-import { PoomsaeName } from "../types/IPoomsaeCategoryDTO";
+import { PoomsaeName } from "../types/IPoomsaeCategory";
 import { PoomsaeDrawer } from "../utils/PoomsaeDrawer";
 
 export default function HomeScreen() {
