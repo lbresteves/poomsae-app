@@ -4,15 +4,15 @@ import { PoomsaeName } from "../types/IPoomsaeCategoryDTO";
 import { PoomsaeDrawer } from "../utils/PoomsaeDrawer";
 
 export default function HomeScreen() {
-    const [drawnPoomsaes, setDrawnPoomsaes] = useState<PoomsaeName[]>([])
+        const [drawnPoomsaes, setDrawnPoomsaes] = useState<PoomsaeName[]>([])
 
-    const handleDraw = ()=>{
-        const drawn = PoomsaeDrawer("Cadet"); // TODO: Add a category chooser feature
-        setDrawnPoomsaes(drawn);
-    }
-    useEffect(()=>{
-        handleDraw();
-    }, [])
+        const handleDraw = ()=>{
+            const drawn = PoomsaeDrawer("Cadet"); // TODO: Add a category chooser feature
+            setDrawnPoomsaes(drawn);
+        }
+        useEffect(()=>{
+            handleDraw();
+        }, [])
 
     return(
         <>
