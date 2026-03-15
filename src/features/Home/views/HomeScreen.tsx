@@ -1,6 +1,16 @@
 import { LabeledIcon, TextBox, ThemedText, ThemedView } from "@/src/shared/components";
+import { useEffect, useState } from "react";
+import { PoomsaeName } from "../types/IPoomsaeCategoryDTO";
+import { PoomsaeDrawer } from "../utils/PoomsaeDrawer";
 
 export default function HomeScreen() {
+    const [drawnPoomsaes, setDrawnPoomsaes] = useState<PoomsaeName[]>([])
+
+    useEffect(()=>{
+        const drawn = PoomsaeDrawer("Cadet");
+        setDrawnPoomsaes(drawn);
+    }, [])
+
     return(
         <>
             <ThemedView padV={110} padH={48} gap={72}>
@@ -13,11 +23,11 @@ export default function HomeScreen() {
                     <ThemedView fit gap={8}>
                         <ThemedView flexRow gap={8} fit padH={40}>
                             <ThemedText>1º</ThemedText>
-                            <TextBox text={"Koryeo"} />
+                            <TextBox text={drawnPoomsaes[0] || ""} />
                         </ThemedView>
                         <ThemedView flexRow gap={8} fit padH={40}>
                             <ThemedText>2º</ThemedText>
-                            <TextBox text={"Pyeongwon"} />
+                            <TextBox text={drawnPoomsaes[1] || ""} />
                         </ThemedView>
                     </ThemedView>
                     
