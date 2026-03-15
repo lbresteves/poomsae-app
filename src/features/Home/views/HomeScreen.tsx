@@ -6,9 +6,12 @@ import { PoomsaeDrawer } from "../utils/PoomsaeDrawer";
 export default function HomeScreen() {
     const [drawnPoomsaes, setDrawnPoomsaes] = useState<PoomsaeName[]>([])
 
-    useEffect(()=>{
-        const drawn = PoomsaeDrawer("Cadet");
+    const handleDraw = ()=>{
+        const drawn = PoomsaeDrawer("Cadet"); // TODO: Add a category chooser feature
         setDrawnPoomsaes(drawn);
+    }
+    useEffect(()=>{
+        handleDraw();
     }, [])
 
     return(
@@ -18,7 +21,7 @@ export default function HomeScreen() {
                     <LabeledIcon icon={"arrow.right"} text="Poomsae" textType="title" />
                     <LabeledIcon icon={"arrow.right"} text="Movimentos" textType="title" />
 
-                    <LabeledIcon icon={"repeat"} text="Sorteio" textType="title" />
+                    <LabeledIcon icon={"repeat"} text="Sorteio" textType="title" onPress={handleDraw}/>
 
                     <ThemedView fit gap={8}>
                         <ThemedView flexRow gap={8} fit padH={40}>

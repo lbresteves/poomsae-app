@@ -9,9 +9,10 @@ export interface ILabeledIcon {
     text: string;
     iconSize?: number;
     textType?: "default" | "title" | "defaultSemiBold" | "subtitle" | "link";
+    onPress?: ()=>void;
 }
 
-export const LabeledIcon = ({icon, text, iconSize, textType}: ILabeledIcon) => {
+export const LabeledIcon = ({icon, text, iconSize, textType, onPress}: ILabeledIcon) => {
     return (
         <ThemedView flexRow justify="space-between"fit>
             <ThemedView fit centerX>
@@ -19,7 +20,7 @@ export const LabeledIcon = ({icon, text, iconSize, textType}: ILabeledIcon) => {
                     {text}
                 </ThemedText>
             </ThemedView>
-            <TouchableOpacity onPress={()=>{}}>
+            <TouchableOpacity onPress={onPress}>
                 <IconSymbol name={icon} size={iconSize ?? 48} color={theme.colors.primary} />
             </TouchableOpacity>
         </ThemedView>

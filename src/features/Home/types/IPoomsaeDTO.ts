@@ -1,4 +1,5 @@
 export interface IPoomsaeDTO {
     id: number,
-    name: string
+    name: string,
+    weight: number,
 }

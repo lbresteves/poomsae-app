@@ -1,5 +1,7 @@
 import { POOMSAE_CATEGORY_LIST } from "../data/PoomsaeCategoryList";
+import { POOMSAE_LIST } from "../data/PoomsaeList";
 import { IPoomsaeCategoryDTO, PoomsaeName } from "../types/IPoomsaeCategoryDTO";
+import { IPoomsaeDTO } from "../types/IPoomsaeDTO";
 
 export type categoryType = typeof POOMSAE_CATEGORY_LIST[number]["category"]
 
@@ -14,11 +16,11 @@ export function PoomsaeDrawer(category: categoryType){
 
 export function DrawTwoDifferentPoomsaes(selectedCategory: IPoomsaeCategoryDTO) {
     const drawnPoomsaes: PoomsaeName[] = []
-    const poomsaeList = selectedCategory.poomsaeList;
+    const poomsaeList = addWeightToPoomsaeList(selectedCategory.poomsaeList);
 
     while(drawnPoomsaes.length < 2){
         const randomIndex = Math.floor(Math.random() * poomsaeList.length);
-        const drawnPoomsae = poomsaeList[randomIndex];
+        const drawnPoomsae = poomsaeList[randomIndex].name;
 
         const isPoomsaeAlreadyDrawed = drawnPoomsaes.includes(drawnPoomsae);
 
@@ -28,4 +30,19 @@ export function DrawTwoDifferentPoomsaes(selectedCategory: IPoomsaeCategoryDTO) 
     }
 
     return drawnPoomsaes;
+}
+
+export function addWeightToPoomsaeList(poomsaeList: string[]): IPoomsaeDTO[]{
+    const weightedPool: IPoomsaeDTO[] = [];
+    
+    poomsaeList.forEach(poomsaeName => {
+        const poomsae = POOMSAE_LIST.find(p=>p.name===poomsaeName);
+
+        if(poomsae) {
+            for(let i = 0; i < poomsae.weight; i++){
+                weightedPool.push(poomsae);
+            }
+        }
+    })
+    return weightedPool;
 }
