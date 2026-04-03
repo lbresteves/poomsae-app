@@ -50,20 +50,22 @@ export const POOMSAE_CATEGORY_LIST: IPoomsaeCategory[] = [
       "Taebaek",
       "Pyeongwon",
       "Sipjin",
-      "Jitae"
+      "Jitae",
+      "Cheonkwon"
     ],
   },
   {
-    category: "Under 40",
+    category: "Under 50",
     poomsaeList: [
-      "Taegeuk Chil Jang",
       "Taegeuk Pal Jang",
       "Koryo",
       "Keumgang",
       "Taebaek",
       "Pyeongwon",
       "Sipjin",
-      "Jitae"
+      "Jitae",
+      "Cheonkwon",
+      "Hansu"
     ],
   },
 ]

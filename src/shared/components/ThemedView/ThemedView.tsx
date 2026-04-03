@@ -12,6 +12,7 @@ export type ThemedViewProps = ViewProps & ICommonStyledProps & {
 export function ThemedView({
   lightColor,
   darkColor,
+  style,
   ...otherProps
 }: ThemedViewProps) {
   const backgroundColor = useThemeColor(
@@ -21,5 +22,5 @@ export function ThemedView({
 
   const commonStyles = buildStyledProps({ ...otherProps, theme }) as any;
 
-  return <View style={[{ backgroundColor }, commonStyles] as StyleProp<ViewStyle>} {...otherProps} />;
+  return <View style={[{ backgroundColor }, commonStyles, style] as StyleProp<ViewStyle>} {...otherProps} />;
 }

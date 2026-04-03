@@ -1,18 +1,8 @@
-import { LabeledIcon, TextBox, ThemedText, ThemedView } from "@/src/shared/components";
-import { useEffect, useState } from "react";
-import { PoomsaeName } from "../types/IPoomsaeCategory";
-import { PoomsaeDrawer } from "../utils/PoomsaeDrawer";
+import { LabeledIcon, SelectorDropdown, TextBox, ThemedText, ThemedView } from "@/src/shared/components";
+import { usePoomsaeDraw } from "../hooks/usePoomsaeDraw";
 
 export default function HomeScreen() {
-        const [drawnPoomsaes, setDrawnPoomsaes] = useState<PoomsaeName[]>([])
-
-        const handleDraw = ()=>{
-            const drawn = PoomsaeDrawer("Cadet"); // TODO: Add a category chooser feature
-            setDrawnPoomsaes(drawn);
-        }
-        useEffect(()=>{
-            handleDraw();
-        }, [])
+    const { drawnPoomsaes, handleDraw } = usePoomsaeDraw("Cadet"); // TODO: Add a category chooser feature
 
     return(
         <>
@@ -23,19 +13,23 @@ export default function HomeScreen() {
 
                     <LabeledIcon icon={"repeat"} text="Sorteio" textType="title" onPress={handleDraw}/>
 
-                    <ThemedView fit gap={8}>
-                        <ThemedView flexRow gap={8} fit padH={40}>
-                            <ThemedText>1º</ThemedText>
-                            <TextBox text={drawnPoomsaes[0] || ""} />
+                    <ThemedView padH={20} gap={20} fit>
+                        <ThemedView gap={8} fit>
+                            <ThemedView flexRow gap={8} fit>
+                                <ThemedText>1º</ThemedText>
+                                <TextBox text={drawnPoomsaes[0] || ""} />
+                            </ThemedView>
+                            <ThemedView flexRow gap={8} fit>
+                                <ThemedText>2º</ThemedText>
+                                <TextBox text={drawnPoomsaes[1] || ""} />
+                            </ThemedView>
                         </ThemedView>
-                        <ThemedView flexRow gap={8} fit padH={40}>
-                            <ThemedText>2º</ThemedText>
-                            <TextBox text={drawnPoomsaes[1] || ""} />
+                        <ThemedView gap={8} flexRow fit>
+                            <ThemedText>Categoria: </ThemedText>
+                            <SelectorDropdown />
                         </ThemedView>
                     </ThemedView>
-                    
-                </ThemedView>
-                
+                </ThemedView>             
                 <LabeledIcon icon={"arrow.right"} text="Consistência" textType="title" />
             </ThemedView>
         </>

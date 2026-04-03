@@ -17,7 +17,7 @@ export type IconSymbolName = keyof typeof MAPPING;
  * - see SF Symbols in the [SF Symbols](https://developer.apple.com/sf-symbols/) app.
  */
 const MAPPING = {
-  "house.fill": "home",
+  "arrow.down": "keyboard-arrow-down",
   "paperplane.fill": "send",
   "chevron.left.forwardslash.chevron.right": "code",
   "chevron.right": "chevron-right",
@@ -25,7 +25,8 @@ const MAPPING = {
   heart: "favorite-border",
   "star.fill": "star",
   "arrow.right": "arrow-right",
-  "repeat": "replay"
+  "repeat": "replay",
+  "xmark": "close",
 } as IconMapping;
 
 /**

@@ -14,7 +14,7 @@ export interface ILabeledIcon {
 
 export const LabeledIcon = ({icon, text, iconSize, textType, onPress}: ILabeledIcon) => {
     return (
-        <ThemedView flexRow justify="space-between"fit>
+        <ThemedView flexRow justify="space-between" fit>
             <ThemedView fit centerX>
                 <ThemedText type={textType ?? "default"}>
                     {text}
