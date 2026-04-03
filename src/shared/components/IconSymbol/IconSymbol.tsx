@@ -9,7 +9,7 @@ type IconMapping = Record<
   SymbolViewProps["name"],
   ComponentProps<typeof MaterialIcons>["name"]
 >;
-type IconSymbolName = keyof typeof MAPPING;
+export type IconSymbolName = keyof typeof MAPPING;
 
 /**
  * Add your SF Symbols to Material Icons mappings here.
@@ -17,13 +17,16 @@ type IconSymbolName = keyof typeof MAPPING;
  * - see SF Symbols in the [SF Symbols](https://developer.apple.com/sf-symbols/) app.
  */
 const MAPPING = {
-  "house.fill": "home",
+  "arrow.down": "keyboard-arrow-down",
   "paperplane.fill": "send",
   "chevron.left.forwardslash.chevron.right": "code",
   "chevron.right": "chevron-right",
   "heart.fill": "favorite",
   heart: "favorite-border",
   "star.fill": "star",
+  "arrow.right": "arrow-right",
+  "repeat": "replay",
+  "xmark": "close",
 } as IconMapping;
 
 /**

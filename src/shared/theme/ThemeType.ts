@@ -7,6 +7,7 @@ export type ColorsType = {
   secondary: string;
   text: string;
   border: string;
+  lightGray: string;
   tabBarActiveTintColor: string;
   transparent: string;
   shadow: string;
